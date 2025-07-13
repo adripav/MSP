@@ -17335,6 +17335,17 @@
                 ? 0
                 : Math.max(Number(l.data.tMax), Number(l.data.tFrom))
               : 0,
+
+            EB = l.data
+              ? "0" === l.data.bMax.substring(1)
+                ? 0
+                : Math.max(Number(l.data.bMax.substring(1)), Number(l.data.bFrom.substring(1)))
+              : 0,
+            CB = l.data
+              ? Number(null === (n = l.data) || void 0 === n ? void 0 : n.bTo.substring(1))
+              : 0,
+            ISP = (EB - CB) > 0 ? (EB - CB) : 0,
+
             C = l.data
               ? Number(null === (n = l.data) || void 0 === n ? void 0 : n.tFrom)
               : 0;
@@ -17434,6 +17445,14 @@
                         (0, zr.jsx)(Br, { children: o("prodano") }),
                         (0, zr.jsx)(Hr, {
                           children: String(E).padStart(4, "0"),
+                        }),
+                      ],
+                    }),
+                    (0, zr.jsxs)(Ur, {
+                      children: [
+                        (0, zr.jsx)(Br, { children: o("prodano") }),
+                        (0, zr.jsx)(Hr, {
+                          children: String(ISP).padStart(4, "0"),
                         }),
                       ],
                     }),
