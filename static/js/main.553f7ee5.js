@@ -17337,9 +17337,9 @@
               : 0,
 
             EB = l.data
-              ? "0" === l.data.bMax.substring(1)
+              ? "0" === l.data.bMax
                 ? 0
-                : Math.max(Number(l.data.bMax.substring(1)), Number(l.data.bFrom.substring(1)))
+                : Math.max(Number(l.data.bMax), Number(l.data.bFrom.substring(1)))
               : 0,
             CB = l.data
               ? Number(null === (n = l.data) || void 0 === n ? void 0 : n.bTo.substring(1))
